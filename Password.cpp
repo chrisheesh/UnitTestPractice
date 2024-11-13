@@ -27,3 +27,5 @@ int Password::count_leading_characters(string phrase){
 bool Password::has_mixed_case(string pass){
   return false;
 }
+
+// "for making progress"
