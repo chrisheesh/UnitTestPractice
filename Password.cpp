@@ -29,6 +29,7 @@ int Password::count_leading_characters(string phrase){
 */
 bool Password::has_mixed_case(string pass){
 
+  // base case: (early exit)
   if (pass.length() < 2) return false;
 
   bool hasLower = false;
@@ -41,9 +42,7 @@ bool Password::has_mixed_case(string pass){
       // early exit condition: (true, has mixed case)
       if (hasUpper && hasLower) return true;
   }
-  
+
   // exit condition: (false, no mixed case)
   return false;
 }
-
-// "for making progress"

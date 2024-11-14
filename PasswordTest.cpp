@@ -62,6 +62,3 @@ TEST(PasswordTest, mixed_case_password)
 	bool actual = my_password.has_mixed_case("ZzZ");
 	ASSERT_EQ(true, actual);
 }
-
-
-// "for making progress"
