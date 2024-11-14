@@ -1,6 +1,9 @@
 #include "Password.h"
 #include <string>
 
+#include <iostream>
+#include <cctype>
+
 using std::string;
 
 /*
@@ -25,6 +28,21 @@ int Password::count_leading_characters(string phrase){
   letter and at least one lower-case letter
 */
 bool Password::has_mixed_case(string pass){
+
+  if (pass.length() < 2) return false;
+
+  bool hasLower = false;
+  bool hasUpper = false;
+
+  for (char ch : pass) {
+      if (std::islower(ch)) hasLower = true;
+      if (std::isupper(ch)) hasUpper = true;
+
+      // early exit condition: (true, has mixed case)
+      if (hasUpper && hasLower) return true;
+  }
+  
+  // exit condition: (false, no mixed case)
   return false;
 }
 
